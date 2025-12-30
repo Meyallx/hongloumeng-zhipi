@@ -1,0 +1,75 @@
+{
+  "project": {
+    "name": "红楼梦多版本对照数据库",
+    "version": "0.1.0",
+    "description": "结构化的《红楼梦》多版本文本、批注和字典数据",
+    "created": "2024-01-20",
+    "lastUpdated": "2024-01-20T10:00:00Z"
+  },
+  "versions": [
+    {
+      "id": "version_001",
+      "name": "程甲本",
+      "fullName": "程伟元、高鹗整理本（程甲本）",
+      "dynasty": "清",
+      "year": "1791",
+      "yearNote": "乾隆五十六年",
+      "chapters": 120,
+      "description": "程伟元、高鹗在乾隆五十六年（1791）整理刊印的《红楼梦》，是最早的活字印刷本。后四十回为程、高续作。",
+      "isPrimary": true,
+      "isComplete": true,
+      "hasAnnotations": false,
+      "characteristics": [
+        "最早的印刷本",
+        "120回完整版",
+        "后四十回为续作"
+      ],
+      "dataStatus": {
+        "chaptersCompleted": 1,
+        "totalChapters": 120,
+        "completionRate": 0.008
+      }
+    },
+    {
+      "id": "version_002",
+      "name": "脂砚斋本",
+      "fullName": "脂砚斋重评石头记（综合本）",
+      "dynasty": "清",
+      "year": "约1754-1760",
+      "yearNote": "甲戌至庚辰年间",
+      "chapters": 80,
+      "description": "带有脂砚斋批语的早期抄本，包括甲戌本、庚辰本、己卯本等。本数据库综合各脂本异文。",
+      "isPrimary": false,
+      "isComplete": false,
+      "hasAnnotations": true,
+      "annotationSources": [
+        "甲戌本脂批",
+        "庚辰本脂批",
+        "己卯本脂批"
+      ],
+      "characteristics": [
+        "最早的版本",
+        "有脂砚斋批语",
+        "仅80回",
+        "文字更接近原稿"
+      ],
+      "dataStatus": {
+        "chaptersCompleted": 1,
+        "totalChapters": 80,
+        "completionRate": 0.0125
+      }
+    }
+  ],
+  "alignmentStrategy": {
+    "baseVersion": "version_001",
+    "method": "sentence-level",
+    "description": "以程甲本为基准，按句子对齐各版本"
+  },
+  "namingConventions": {
+    "sentenceId": "v{版本号3位}_ch{章节号3位}_s{句子号3位}",
+    "examples": [
+      "v001_ch001_s001 = 程甲本第1回第1句",
+      "v002_ch001_s001 = 脂本第1回第1句"
+    ]
+  }
+}
